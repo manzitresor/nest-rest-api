@@ -20,8 +20,8 @@ export class ItemsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id) {
-    return `Get Your Id: ${id}`;
+  findOne(@Param('id') id): Item {
+    return this.ItemsService.findOne(id);
   }
 
   @Post()

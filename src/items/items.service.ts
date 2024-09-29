@@ -17,7 +17,12 @@ export class ItemsService {
       description: 'This is item Two Description',
     },
   ];
+
   findAll(): Item[] {
     return this.Items;
+  }
+
+  findOne(id: string): Item {
+    return this.Items.find((item) => item.id === id);
   }
 }
