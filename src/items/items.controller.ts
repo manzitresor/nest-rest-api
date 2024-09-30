@@ -15,18 +15,18 @@ import { Item } from './interfaces/item.interface';
 export class ItemsController {
   constructor(private readonly ItemsService: ItemsService) {}
   @Get()
-  async findAll(): Promise<Item[]> {
-    return await this.ItemsService.findAll();
+  findAll(): Promise<Item[]> {
+    return this.ItemsService.findAll();
   }
 
   @Get(':id')
-  async findOne(@Param('id') id): Promise<Item> {
-    return await this.ItemsService.findOne(id);
+  findOne(@Param('id') id): Promise<Item> {
+    return this.ItemsService.findOne(id);
   }
 
   @Post()
-  async create(@Body() createItemDto: CreateItemDto): Promise<Item> {
-    return await this.ItemsService.create(createItemDto);
+  create(@Body() createItemDto: CreateItemDto): Promise<Item> {
+    return this.ItemsService.create(createItemDto);
   }
 
   @Put(':id')
@@ -35,7 +35,7 @@ export class ItemsController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return `Deleted success ${id}`;
+  remove(@Param('id') id: string): Promise<Item> {
+    return this.ItemsService.delete(id);
   }
 }
