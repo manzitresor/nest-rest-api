@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is the REST API THAT PERFORM BASIC CRUD OPERATION. IT WAS DONE FOR EDUCATION PURPOSE.
 
 ## Project setup
 
