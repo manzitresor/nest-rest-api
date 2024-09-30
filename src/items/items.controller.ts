@@ -25,8 +25,8 @@ export class ItemsController {
   }
 
   @Post()
-  create(@Body() createitemDto: CreateItemDto): string {
-    return `Name: ${createitemDto.name} Description: ${createitemDto.description}`;
+  async create(@Body() createItemDto: CreateItemDto): Promise<Item> {
+    return await this.ItemsService.create(createItemDto);
   }
 
   @Put(':id')
