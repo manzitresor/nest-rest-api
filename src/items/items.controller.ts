@@ -15,13 +15,13 @@ import { Item } from './interfaces/item.interface';
 export class ItemsController {
   constructor(private readonly ItemsService: ItemsService) {}
   @Get()
-  findAll(): Item[] {
-    return this.ItemsService.findAll();
+  async findAll(): Promise<Item[]> {
+    return await this.ItemsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id): Item {
-    return this.ItemsService.findOne(id);
+  async findOne(@Param('id') id): Promise<Item> {
+    return await this.ItemsService.findOne(id);
   }
 
   @Post()
