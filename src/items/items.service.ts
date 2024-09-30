@@ -20,4 +20,7 @@ export class ItemsService {
   async delete(id: string): Promise<Item> {
     return await this.itemModel.findByIdAndDelete(id);
   }
+  async update(id: string, item: Item): Promise<Item> {
+    return await this.itemModel.findByIdAndUpdate(id, item, { new: true });
+  }
 }
